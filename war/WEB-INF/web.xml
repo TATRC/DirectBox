@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+              http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+         version="2.5"
+         xmlns="http://java.sun.com/xml/ns/javaee">
+
+	<!-- The context params that read by ContextLoaderListener  -->
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>
+			/WEB-INF/rest-context.xml
+		</param-value>
+	</context-param>
+	
+	<!-- This listener will load other application context file in addition to springweb-servlet.xml -->
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
+	
+	<servlet>
+		<servlet-name>rest</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>rest</servlet-name>
+		<url-pattern>/attachments/*</url-pattern>
+	</servlet-mapping>
+
+  <!-- Servlets -->
+  <servlet>
+    <servlet-name>emailServlet</servlet-name>
+    <servlet-class>gov.hhs.fha.nhinc.directbox.server.EmailServiceImpl</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>emailServlet</servlet-name>
+    <url-pattern>/directbox/emailservice</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>tokenServlet</servlet-name>
+    <servlet-class>gov.hhs.fha.nhinc.directbox.server.TokenServiceImpl</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>tokenServlet</servlet-name>
+    <url-pattern>/directbox/tokenservice</url-pattern>
+  </servlet-mapping>
+  
+  <!-- Default page to serve -->
+  <welcome-file-list>
+    <welcome-file>ahltabox.html</welcome-file>
+  </welcome-file-list>
+
+</web-app>

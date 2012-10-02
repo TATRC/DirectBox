@@ -1,0 +1,8 @@
+/** Add css rules here for your application. */
+html,body {
+	/** These next few are to work around IE6 bug with scroll bars. */
+	overflow: auto;
+	overflow-x: hidden;
+	margin: 5px 5px 5px 5px;
+}
+

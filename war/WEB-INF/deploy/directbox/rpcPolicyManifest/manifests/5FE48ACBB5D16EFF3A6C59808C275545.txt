@@ -1,0 +1,2 @@
+serviceClass: gov.hhs.fha.nhinc.directbox.client.EmailService
+path: C3713611FCCF00D9FF50F7414A1173D6.gwt.rpc

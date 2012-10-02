@@ -1,0 +1,3 @@
+# Module directbox
+# RPC service class, partial path of RPC policy file
+gov.hhs.fha.nhinc.directbox.client.EmailService, C3713611FCCF00D9FF50F7414A1173D6.gwt.rpc
